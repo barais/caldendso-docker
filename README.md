@@ -21,7 +21,7 @@ Make sure you have `docker` & `docker-compose` installed on the server / system.
 1. Clone calendso-docker
 
     ```bash
-    git clone --recursive https://github.com/calendso/docker.git calendso-docker
+    git clone https://github.com/barais/caldendso-docker
     ```
 
 2. Change into the directory
@@ -30,7 +30,7 @@ Make sure you have `docker` & `docker-compose` installed on the server / system.
     cd calendso-docker
     ```
 
-3. Rename `.env.example` to `.env` and update `.env` if needed.
+3. Rename `.env.local` to `.env` and update `.env` if needed.
 
 4. Build and start calendso
 
@@ -51,23 +51,3 @@ Make sure you have `docker` & `docker-compose` installed on the server / system.
 8. Fill out the fields (remembering to encrypt your password with [BCrypt](https://bcrypt-generator.com/)) and click `Save 1 Record` to create your first user.
 
 9. Open a browser to [http://localhost:3000](http://localhost:3000) and login with your just created, first user.
-
-## Git Submodules
-
-This repository uses a git submodule.
-
-If you cloned the repository without using `--recursive`, then you can initialize and clone the submodule with the following steps.
-
-1. Init the submodule
-
-    ```bash
-    git submodule init
-    ```
-
-2. Update the submodule
-
-    ```bash
-    git submodule update --remote
-    ```
-
-For more advanced usage, please refer to the git documentation: [https://git-scm.com/book/en/v2/Git-Tools-Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)

@@ -147,23 +147,16 @@ export const useSlots = (props: UseSlotsProps) => {
       responseBody.bookings.every((busyTime): boolean => {
         const startTime = dayjs(busyTime.startTime);
         const endTime = dayjs(busyTime.endTime);
-        console.log('pass par la 3');
-        console.log(startTime);
-        console.log(endTime);
         // Check if start times are the same
         if (times[i].isBetween(startTime, endTime, null, "[)")) {
-          console.log('pass par la');
           times.splice(i, 1);
         }
         // Check if slot end time is between start and end time
         else if (times[i].add(eventLength, "minutes").isBetween(startTime, endTime)) {
-          console.log('pass par la1');
           times.splice(i, 1);
         }
         // Check if startTime is between slot
         else if (startTime.isBetween(times[i], times[i].add(eventLength, "minutes"))) {
-          console.log('pass par la2');
-
           times.splice(i, 1);
         } else {
           return true;
